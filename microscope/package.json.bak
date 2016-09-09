@@ -1,0 +1,40 @@
+{
+	 "name": "microscope",
+	 "private": true,
+	 "scripts": {
+	 	"start": "meteor run"
+	 },
+	 "dependencies": {
+	    "meteor-node-stubs": "~0.2.0"
+	 },
+	"server": {
+	    "host": "121.40.45.107",
+	    "username": "root",
+	    "password": "X1789020y",
+	    "//":" or pem file (ssh based authentication)",
+	    "//": "WARNING: Keys protected by a passphrase are not supported",
+	    "//pem": "~/.ssh/id_rsa",
+	    "//":" Also, for non-standard ssh port use this",
+	    "//sshOptions": { "port" : 22 },
+	    "//":" server specific environment variables",
+	    "env": {}
+	},
+	"setup": {
+	    "//": "Install MongoDB on the server. Does not destroy the local MongoDB on future setups",
+	    "mongo": true,
+	    "//": "Application server path .  must in /usr /opt /home /alidata directory.",
+	    "path": "/usr/local/meteorup"
+	},
+	"deploy": {
+	    "//": "Application name (no spaces).",
+	    "appName": "microscope",
+	    "//": "Configure environment",
+	    "//": "ROOT_URL must be set to your correct domain (https or http)",
+	    "env": {
+	        "YJENV": "microscope", // customize environment
+	        "MONGO_URL": "mongodb://127.0.0.1:27017/best",
+	        "PORT": 8080,
+	        "ROOT_URL": "http://lbt-zh.com:8080"
+	    }
+	} 
+}
